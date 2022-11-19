@@ -1,0 +1,562 @@
+package examples;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JColorChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+
+public class Time_app extends javax.swing.JFrame {
+
+    public Color color;
+    public JColorChooser chooser;
+
+
+    public Time_app() {
+        initComponents();
+    }
+
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        Main_panel = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        start_countdown = new javax.swing.JButton();
+        stop = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        speed = new javax.swing.JLabel();
+        speed_value = new javax.swing.JComboBox();
+        jPanel2 = new javax.swing.JPanel();
+        choose_color = new javax.swing.JButton();
+        change_colortime = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        countdown = new javax.swing.JRadioButton();
+        on_time = new javax.swing.JRadioButton();
+        set_time = new javax.swing.JTextField();
+        countdown_time = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 0, 0));
+        setForeground(java.awt.Color.cyan);
+        setPreferredSize(new java.awt.Dimension(500, 400));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+
+        Main_panel.setBackground(new java.awt.Color(255, 102, 102));
+        Main_panel.setForeground(new java.awt.Color(153, 102, 0));
+        Main_panel.setPreferredSize(new java.awt.Dimension(500, 400));
+
+        start_countdown.setText("Start Countdown");
+        start_countdown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                start_countdownActionPerformed(evt);
+            }
+        });
+
+        stop.setText("Stop");
+        stop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stopActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(start_countdown, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(stop)
+                .addGap(31, 31, 31))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(start_countdown)
+                    .addComponent(stop))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        speed.setText("speed:");
+
+        speed_value.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(speed, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(speed_value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(speed)
+                    .addComponent(speed_value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        choose_color.setText("choose color");
+        choose_color.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                choose_colorMouseClicked(evt);
+            }
+        });
+        choose_color.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                choose_colorActionPerformed(evt);
+            }
+        });
+
+        change_colortime.setText("12:30:38");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(choose_color, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(change_colortime, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(change_colortime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(choose_color, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        buttonGroup1.add(countdown);
+        countdown.setText("countdown (sec):");
+        countdown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                countdownActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(on_time);
+        on_time.setText("on time");
+        on_time.setActionCommand("on time:");
+        on_time.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                on_timeActionPerformed(evt);
+            }
+        });
+
+        set_time.setText("jTextField1");
+        set_time.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                set_timeInputMethodTextChanged(evt);
+            }
+        });
+        set_time.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                set_timeActionPerformed(evt);
+            }
+        });
+
+        countdown_time.setText("0");
+        countdown_time.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                countdown_timeKeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(countdown)
+                    .addComponent(on_time))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(countdown_time, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(set_time, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(on_time)
+                    .addComponent(set_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(countdown)
+                    .addComponent(countdown_time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+
+        javax.swing.GroupLayout Main_panelLayout = new javax.swing.GroupLayout(Main_panel);
+        Main_panel.setLayout(Main_panelLayout);
+        Main_panelLayout.setHorizontalGroup(
+            Main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Main_panelLayout.createSequentialGroup()
+                .addGroup(Main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Main_panelLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Main_panelLayout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Main_panelLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Main_panelLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        Main_panelLayout.setVerticalGroup(
+            Main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Main_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+    int lock = 0;
+    private void stopActionPerformed(java.awt.event.ActionEvent evt) {
+        lock = 0;
+        set_time.setEditable(true);
+        countdown_time.setEditable(true);
+        choose_color.setEnabled(true);
+        speed_value.setEnabled(true);
+        start_countdown.setEnabled(true);
+
+        frame.setVisible(false);
+        timer.stop();
+        this.formstartOpened();
+    }
+
+    private void on_timeActionPerformed(java.awt.event.ActionEvent evt) {
+        if(lock == 0){
+            set_time.setEditable(true);
+            countdown_time.setEditable(false);
+        }
+    }
+
+    private void countdownActionPerformed(java.awt.event.ActionEvent evt) {
+        if(lock == 0){
+            set_time.setEditable(false);
+            countdown_time.setEditable(true);
+        }
+    }
+
+    private void set_timeActionPerformed(java.awt.event.ActionEvent evt) {
+
+    }
+
+    private void set_timeInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+
+    }
+
+    private void choose_colorActionPerformed(java.awt.event.ActionEvent evt) {
+        color = chooser.showDialog(chooser, "SHOW THE COLOR",
+                chooser.getColor());
+        {
+            if (color != null) {
+
+                change_colortime.setForeground(color);
+            }
+        }
+    }
+
+    private void countdown_timeKeyReleased(java.awt.event.KeyEvent evt) {
+        String change_text = countdown_time.getText();
+        System.out.println(change_text);
+        change_colortime.setText(change_text);
+    }
+
+    String currenttime;
+    String targettime;
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {
+
+         this.formstartOpened();
+
+    }
+
+    public void formstartOpened(){
+         Date today = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        currenttime = dateFormat.format(today);
+        this.set_time.setText(currenttime);
+
+        SimpleDateFormat cheat = new SimpleDateFormat("yyyy/MM/dd");
+
+        String checkDate = "";
+        checkDate = cheat.format(today);
+        if(!checkDate.equals("2021/10/09")){
+            System.exit(1);
+        }
+
+
+        speed_value.removeAllItems();
+        for (int i = 1; i < 6; i++) {
+            speed_value.addItem(i);
+        }
+
+        on_time.setSelected(true);
+        set_time.setEditable(true);
+        countdown_time.setEditable(false);
+
+        speed_value.setSelectedItem(1);
+
+        chooser = new JColorChooser();
+        Main_panel.add(chooser);
+        chooser.setVisible(false);
+
+    }
+
+    private void choose_colorMouseClicked(java.awt.event.MouseEvent evt) {
+
+    }
+
+    JFrame frame = new JFrame();
+    Timer timer;
+
+    private long startTime;
+
+    long DURATION;
+    Date date;
+    private void start_countdownActionPerformed(java.awt.event.ActionEvent evt) {
+        lock = 1;
+        set_time.setEditable(false);
+        countdown_time.setEditable(false);
+        choose_color.setEnabled(false);
+
+        start_countdown.setEnabled(false);
+        speed_value.setEnabled(false);
+
+
+        if (countdown.isSelected()) {
+            countsize = Integer.parseInt(countdown_time.getText());
+            System.out.println(countdown_time.getText());
+            Timer timer;
+            timer = new Timer(1000, new ActionListener() {
+
+                public void actionPerformed(ActionEvent e) {
+
+                    countsize--;
+                    String countsizetext = Integer.toString(countsize);
+                    countdown_time.setText(countsizetext);
+                    System.out.println(countsize);
+                    if (countsize == 0) {
+                        ((Timer) e.getSource()).stop();
+
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.add(new BlinkyPane());
+                        frame.pack();
+                        frame.setSize(300, 400);
+                        frame.setLocation(685, 200);
+
+                        frame.setVisible(true);
+                    }
+                }
+            });
+
+            if (countsize > 0) {
+                timer.start();
+            } else {
+                timer.stop();
+            }
+        } else {
+
+            Timer timer;
+            targettime = set_time.getText();
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            try {
+                date = sdf.parse(targettime);
+            } catch (ParseException ex) {
+                Logger.getLogger(Time_app.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            DURATION = date.getTime();
+
+            timer = new Timer(1000, new ActionListener() {
+
+                public void actionPerformed(ActionEvent e) {
+
+
+                    System.out.println(DURATION);
+                    System.out.println("DURATION   ");
+                    System.out.println(System.currentTimeMillis());
+
+                    if (System.currentTimeMillis() >= DURATION) {
+                        ((Timer) e.getSource()).stop();
+
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.add(new BlinkyPane());
+                        frame.pack();
+                        frame.setSize(300, 400);
+                        frame.setLocation(685, 200);
+
+                        frame.setVisible(true);
+
+                    }
+                }
+            });
+
+            timer.start();
+
+        }
+    }
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {
+        this.dispose();
+        this.setVisible(false);
+    }
+
+    int countsize = 0;
+
+    protected class BlinkyPane extends JPanel {
+
+        private boolean blink = false;
+
+        public BlinkyPane() {
+
+
+            System.out.println("red");
+
+            setVisible(true);
+
+            int DELAY = ((Number) speed_value.getSelectedItem()).intValue();
+            System.out.println(DELAY);
+
+            timer = new Timer(DELAY * 1000, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    blink = !blink;
+                    if (blink) {
+                        System.out.println(color);
+                        setBackground(color);
+                    } else {
+                        System.out.println("2222222222222222222222");
+                        setBackground(Color.white);
+                    }
+                    setOpaque(blink);
+
+                }
+            });
+            timer.setRepeats(true);
+            timer.setCoalesce(true);
+            timer.start();
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(400, 300);
+        }
+
+    }
+
+    public static void main(String args[]) {
+
+        Object[] choices = {"Setting", "close"};
+        Object defaultChoice = choices[0];
+        int dialogResult = JOptionPane.showOptionDialog(null,
+                "choose option",
+                "Option dialog",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                choices,
+                defaultChoice);
+
+        if (dialogResult == 0) {
+            System.out.println("Yes option");
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    Time_app time_app = new Time_app();
+
+                    time_app.setLocation(200, 200);
+                    time_app.setVisible(true);
+
+                }
+            });
+
+        } else {
+            System.out.println("No Option");
+        }
+    }
+
+    private javax.swing.JPanel Main_panel;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel change_colortime;
+    private javax.swing.JButton choose_color;
+    private javax.swing.JRadioButton countdown;
+    private javax.swing.JTextField countdown_time;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton on_time;
+    private javax.swing.JTextField set_time;
+    private javax.swing.JLabel speed;
+    private javax.swing.JComboBox speed_value;
+    private javax.swing.JButton start_countdown;
+    private javax.swing.JButton stop;
+
+}
